@@ -10,6 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+<!-- زر الشات بوت العائم -->
+<button id="chatbotToggle" style="position:fixed; bottom:20px; left:20px; background:#4f46e5; color:white; border:none; border-radius:50%; width:60px; height:60px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:1000;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+</button>
+
+<!-- نافذة الشات بوت -->
+<div id="chatbotWindow" style="display:none; position:fixed; bottom:90px; left:20px; width:400px; height:600px; background:white; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.2); z-index:999;">
+    <iframe src="chatbot.html" width="100%" height="100%" style="border:none; border-radius:16px;"></iframe>
+</div>
+
+<script>
+    // التحكم في فتح وإغلاق الشات بوت
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    
+    chatbotToggle.addEventListener('click', () => {
+        if (chatbotWindow.style.display === 'none') {
+            chatbotWindow.style.display = 'block';
+        } else {
+            chatbotWindow.style.display = 'none';
+        }
+    });
+</script>
 <body>
     <nav class="navbar">
     <div class="container">
